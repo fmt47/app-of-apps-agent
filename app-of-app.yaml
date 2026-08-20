@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  labels:
+    cluster-name: hub-prod-local
+    env: prod
+    region: local
+    type: hub
+  name: bootstrap-hub-prod-local
+  namespace: argocd
+spec:
+  destination:
+    name: hub-prod-local
+    namespace: argocd
+  project: tenants-infra
+  source:
+    path: apps
+    repoURL: https://github.com/gnunn1/app-of-apps-agent
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      enabled: true
+      selfHeal: true

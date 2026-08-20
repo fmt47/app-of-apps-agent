@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  labels:
+    argocd-agent: "true"
+    cluster-name: workload-prod-local
+    env: prod
+    region: local
+    tenant: petclinic
+    type: workload
+  name: guestbook
+  namespace: argocd
+spec:
+  destination:
+    name: workload-prod-local
+  project: tenants-infra
+  source:
+    path: guestbook
+    repoURL: https://github.com/argoproj/argocd-example-apps
+  syncPolicy:
+    automated:
+      selfHeal: true
