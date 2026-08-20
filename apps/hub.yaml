@@ -7,7 +7,7 @@ metadata:
     region: local
     tenant: petclinic
     type: hub
-  name: guestbook
+  name: hpl-guestbook
   namespace: argocd
 spec:
   destination:
