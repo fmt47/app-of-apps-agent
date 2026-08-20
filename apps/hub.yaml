@@ -12,10 +12,14 @@ metadata:
 spec:
   destination:
     name: hub-prod-local
+    namespace: guestbook
   project: tenants-infra
   source:
     path: guestbook
     repoURL: https://github.com/argoproj/argocd-example-apps
   syncPolicy:
     automated:
+      enabled: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
