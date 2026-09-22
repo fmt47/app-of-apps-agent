@@ -13,7 +13,7 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    name: local-cluster
+    server: https://kubernetes.default.svc   # hub local; use server URL (not name) so the resource tree loads under argocd-agent
     namespace: hpl-helloworld
   project: default
   source:
