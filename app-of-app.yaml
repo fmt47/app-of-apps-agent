@@ -2,20 +2,20 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   labels:
-    cluster-name: hub-prod-local
+    cluster-name: local-cluster
     env: prod
     region: local
     type: hub
   name: hpl-app-of-app
-  namespace: argocd
+  namespace: openshift-gitops
 spec:
   destination:
-    name: hub-prod-local
-    namespace: argocd
-  project: tenants-infra
+    name: local-cluster
+    namespace: openshift-gitops
+  project: default
   source:
     path: apps
-    repoURL: https://github.com/gnunn1/app-of-apps-agent
+    repoURL: https://github.com/fmt47/app-of-apps-agent
     targetRevision: HEAD
   syncPolicy:
     automated:

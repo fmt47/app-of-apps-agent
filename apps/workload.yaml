@@ -3,18 +3,18 @@ kind: Application
 metadata:
   labels:
     argocd-agent: "true"
-    cluster-name: workload-prod-local
+    cluster-name: yupchang-mc-0917
     env: prod
     region: local
     tenant: petclinic
     type: workload
   name: wpl-guestbook
-  namespace: argocd
+  namespace: openshift-gitops
 spec:
   destination:
-    name: workload-prod-local
+    name: yupchang-mc-0917
     namespace: guestbook
-  project: tenants-infra
+  project: default
   source:
     path: guestbook
     repoURL: https://github.com/argoproj/argocd-example-apps
