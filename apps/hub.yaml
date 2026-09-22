@@ -9,14 +9,16 @@ metadata:
     type: hub
   name: hpl-guestbook
   namespace: openshift-gitops
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     name: local-cluster
     namespace: guestbook
   project: default
   source:
-    path: guestbook
-    repoURL: https://github.com/argoproj/argocd-example-apps
+    path: helloworld-argo
+    repoURL: https://github.com/stolostron/application-lifecycle-samples
   syncPolicy:
     automated:
       enabled: true

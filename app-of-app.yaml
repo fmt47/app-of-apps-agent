@@ -8,6 +8,8 @@ metadata:
     type: hub
   name: hpl-app-of-app
   namespace: openshift-gitops
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     name: local-cluster

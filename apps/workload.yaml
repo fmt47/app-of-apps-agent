@@ -10,14 +10,16 @@ metadata:
     type: workload
   name: wpl-guestbook
   namespace: openshift-gitops
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     name: yupchang-mc-0917
     namespace: guestbook
   project: default
   source:
-    path: guestbook
-    repoURL: https://github.com/argoproj/argocd-example-apps
+    path: helloworld-argo
+    repoURL: https://github.com/stolostron/application-lifecycle-samples
   syncPolicy:
     automated:
       enabled: true
