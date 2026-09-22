@@ -8,14 +8,14 @@ metadata:
     region: local
     tenant: petclinic
     type: workload
-  name: wpl-guestbook
+  name: wpl-helloworld
   namespace: openshift-gitops
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     name: yupchang-mc-0917
-    namespace: guestbook
+    namespace: wpl-helloworld
   project: default
   source:
     path: helloworld-argo

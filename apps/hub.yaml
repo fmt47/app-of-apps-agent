@@ -7,14 +7,14 @@ metadata:
     region: local
     tenant: petclinic
     type: hub
-  name: hpl-guestbook
+  name: hpl-helloworld
   namespace: openshift-gitops
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     name: local-cluster
-    namespace: guestbook
+    namespace: hpl-helloworld
   project: default
   source:
     path: helloworld-argo
